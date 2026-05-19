@@ -8,7 +8,14 @@ df = df.dropna(subset=["Price"])
 # och tas sedan bort
 
 
-print(df.columns)
+Most_expesnsive = (df["Price"].max())
+Least_expesnsive = (df["Price"].min())
+average_price = (df["Price"].mean())
 
+most_miles = (df["Mileage"].max())
+least_miles = (df["Mileage"].min())
+average_miles = (df["Mileage"].mean())
 
-
+newest_car = (df["Year"].max())
+oldest_car = (df["Year"].min())
+average_age = (df["Year"].mean())
