@@ -63,15 +63,3 @@ good_cars = df[df["Score"] == 1]
 neutral_cars = df[df["Score"] == 0]
 bad_cars = df[df["Score"] <= -1]
 
-
-import matplotlib.pyplot as plt
-
-plt.figure()
-
-plt.scatter(df["Mileage"], df["Price"])
-
-plt.xlabel("Mileage")
-plt.ylabel("Price")
-plt.title("Price vs Mileage")
-
-plt.show()
