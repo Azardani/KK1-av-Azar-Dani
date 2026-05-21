@@ -65,4 +65,4 @@ Very_bad_cars = df[df["Score"] == -2]
 Horrible_cars = df[df["Score"] == -3]
 
 
-
+print(too_good_to_be_true_cars)
