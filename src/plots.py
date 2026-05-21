@@ -27,7 +27,7 @@ plt.title("Mileage vs Price")
 # sparar bilden
 plt.savefig("price_vs_mileage.png", dpi=300, bbox_inches="tight")
 
-import matplotlib.pyplot as plt
+
 
 brand_avg = df.groupby("Brand")["Price"].mean().sort_values(ascending=False).head(10)
 

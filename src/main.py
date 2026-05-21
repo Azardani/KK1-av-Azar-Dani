@@ -1,10 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 df = pd.read_csv("car_price_dataset.csv", sep=";")
-from plots import price_distribution, price_vs_mileage
-
-price_distribution(df)
-price_vs_mileage(df)
 
 
 df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
@@ -25,12 +21,10 @@ df = df.dropna(subset=["Price", "Mileage", "Year"])
 
 Most_expensive = df[df["Price"] == df["Price"].max()]   ## hittar den dyraste samt billigaste bilen
 Least_expensive = df[df["Price"] == df["Price"].min()]
-
 average_price = df["Price"].mean() ## genomsnitliga priset av alla bilar
 
-most_miles = df[df["Mileage"] == df["Mileage"].max()] ## mes och minst miltal
+most_miles = df[df["Mileage"] == df["Mileage"].max()] ## mest och minst miltal
 least_miles = df[df["Mileage"] == df["Mileage"].min()]
-
 average_miles = df["Mileage"].mean() ## genosnitlliga miltal 
 
 newest_car = df[df["Year"] == df["Year"].max()] ## nyaste och äldsta bilen
@@ -70,6 +64,5 @@ bad_cars = df[df["Score"] == -1]
 Very_bad_cars = df[df["Score"] == -2]
 Horrible_cars = df[df["Score"] == -3]
 
-print("too_good_to_be_true_cars")
-print(too_good_to_be_true_cars.head(5))
+
 
