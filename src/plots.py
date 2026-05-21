@@ -3,14 +3,25 @@ import pandas as pd
 df = pd.read_csv("car_price_dataset.csv", sep=";")
 
 
-
 plt.figure(figsize=(8,6))
+
+counts, bins, patches = plt.hist(df["Price"], bins=20)
 
 plt.hist(df["Price"], bins=20)
 
 plt.xlabel("Price")
 plt.ylabel("number of cars")
 plt.title("price distribution of cars")
+
+# skriver siffror ovanpå staplarna
+for count, patch in zip(counts, patches):
+    plt.text(
+        patch.get_x() + patch.get_width() / 2,
+        patch.get_height(),
+        int(count),
+        ha='center',
+        va='bottom'
+    )
 
 plt.tight_layout()
 
